@@ -3,7 +3,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
-    "serve": "yarn build && firebase emulators:start --only functions",
+    "serve": "tsc-watch --onSuccess 'firebase emulators:start --only functions'",
     "shell": "yarn build && firebase functions:shell",
     "start": "yarn shell",
     "deploy": "firebase deploy --only functions",
@@ -24,6 +24,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.0",
     "firebase-functions-test": "^0.2.0",
+    "tsc-watch": "^4.4.0",
     "typescript": "^3.8.0"
   },
   "private": true
